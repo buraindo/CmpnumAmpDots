@@ -104,11 +104,14 @@ namespace ComplexAmpDots
                 string link = "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BB%D0%B4%D0%B0";
                 WebClient webClient = new WebClient();
                 webClient.DownloadFile(link, "Balda.html");
-                Console.WriteLine("File successfully downloaded");
+                link = "https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png";
+                webClient.DownloadFile(link, "Csharp.png");
+                Console.WriteLine("Files successfully downloaded");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("You're not doing fine ya know. Check your link representation: tou could make a mistake!");
+                Console.WriteLine("Can't download these files. Check your link representation: you could make a mistake!");
+                throw ex;
             }
             Console.ReadLine();
         }
